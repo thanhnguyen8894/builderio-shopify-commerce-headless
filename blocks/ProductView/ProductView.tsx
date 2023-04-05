@@ -14,7 +14,9 @@ import {
 } from '@lib/shopify/storefront-data-hooks/src/utils/product'
 import ImageCarousel from '@components/common/ImageCarousel'
 import ProductLoader from './ProductLoader'
+import BackToHomeButton  from '@components/common/BackToHomeButton'
 
+import '@components/modals/styles.module.css'
 interface Props {
   className?: string
   children?: any
@@ -107,8 +109,12 @@ const ProductBox: React.FC<Props> = ({
           }}
         />
       )}
+      <div>
+      <BackToHomeButton/>
+      </div>
       <Grid gap={4} columns={[1, 2]}>
         <div>
+        
           <div
             sx={{
               border: '1px solid gray',
@@ -169,6 +175,8 @@ const ProductBox: React.FC<Props> = ({
               )}
             </Grid>
           </div>
+      
+          
           <Button
             name="add-to-cart"
             disabled={loading}
